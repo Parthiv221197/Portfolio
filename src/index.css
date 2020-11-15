@@ -1,0 +1,99 @@
+@font-face {
+    font-family: Roboto;
+    src: url(assests/Roboto-Light.ttf);
+    /* font-weight: 800; */
+}
+
+@font-face {
+    font-family: Sriracha;
+    src: url(assests/Sriracha-Regular.ttf);
+}
+
+body{
+    background-color: #014d3f;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Roboto';
+    color: white;
+}
+
+h1,h2,h3,h4,h5 {
+    font-family: 'Sriracha';
+    color: white
+}
+
+.btn:hover{
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+.profile{
+    width: 260px;
+    height: 290px;
+    border-radius: 100px;
+}
+
+.Bio{
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+
+.social:hover{
+    background-color: white;
+}
+
+.Skills{
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 15%;
+}
+  
+.Projects{
+    width: 300;
+    margin: 10;
+    text-align: center;
+}
+
+.Resume{
+    color: black;
+    font-weight: bold;
+}
+
+.one{
+    text-align: left;
+    margin: auto;
+    padding: 6%;
+}
+
+.one h3, .one h4{
+    color: black;
+    font-weight: bolder;
+}
+
+.one p{
+    color: rgb(2, 77, 2);
+    font-weight: bolder;
+}
+
+.two p{
+    color: rgb(2, 77, 2);
+    font-weight: bolder;
+}
+
+.two h3, .two h4, .two h5{
+    color: black;
+    font-weight: bolder;
+}
+
+.two{
+    text-align: right;
+    margin: auto;
+    padding: 6%;
+}
+
+.skill p{
+    font-size: 150%;
+}
