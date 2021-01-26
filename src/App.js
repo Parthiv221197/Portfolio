@@ -28,7 +28,8 @@ class App extends Component {
         steps={[
           'Software Developer                    ',
           'Web Developer                         ',
-          'iOS developer                         ',
+          'Mobile Developer                         ',
+          'Technical Analyst                         ',
         ]} /></h4>
             <div className="Bio">
               <p>I'm always eager to learn new stuff and looking forward to opportunities where I can use my skills.
@@ -53,6 +54,10 @@ class App extends Component {
             <div className="two">
               <LightSpeed right>
               <h3>Experience</h3>
+              <h4>Technical Analyst Co-op</h4>
+              <h5>CIBC</h5>
+              <p>January 2021 - August 2021</p>
+              <p>Monitor Production and make sure that all processes are running smoothly</p>
               <h4>Lassonde Academy Coach</h4>
               <h5>York University</h5>
               <p>August 2020 - September 2020</p>
