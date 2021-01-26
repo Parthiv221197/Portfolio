@@ -57,7 +57,7 @@ class App extends Component {
               <h4>Technical Analyst Co-op</h4>
               <h5>CIBC</h5>
               <p>January 2021 - August 2021</p>
-              <p>Monitor Production and make sure that all processes are running smoothly</p>
+              <p>Automate Production servers and Work with Ansible and Artifactory.</p>
               <h4>Lassonde Academy Coach</h4>
               <h5>York University</h5>
               <p>August 2020 - September 2020</p>
