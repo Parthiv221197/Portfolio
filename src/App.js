@@ -42,6 +42,7 @@ class App extends Component {
         </Parallax>
         <Parallax bgImage={ Resume } strength={600}>
           <h2 className="Resume">My Resume</h2>
+          <h5><a href="https://drive.google.com/file/d/1nEQsaiDJSIP-glAPv7Oi3fuQShUgEKn0/view?usp=sharing" target="_blank" rel="noopener noreferrer"> Download Resume </a></h5>
           <div>
             <div className="one">
               <LightSpeed left>
@@ -70,11 +71,25 @@ class App extends Component {
             </div>
             <div className="one">
               <LightSpeed left>
-            <h3>Volunteer</h3>
-            <h4>CTC(Computational Thinking club) Mentor lead</h4>
-            <p>January 2019 - Present</p>
-            <p>Guided other mentors being a lead mentor and managed weekly activities</p>
-            </LightSpeed>
+              <h3>Volunteer</h3>
+              <h4>CTC(Computational Thinking club) Mentor lead</h4>
+              <p>January 2019 - Present</p>
+              <p>Guided other mentors being a lead mentor and managed weekly activities</p>
+              </LightSpeed>
+            </div>
+            <div className="two">
+              <LightSpeed right>
+              <h3>Certifications</h3>
+              <h4>Applied Data Science with Python</h4>
+              <h5>IBM</h5>
+              <p><a href="https://www.youracclaim.com/badges/ecc9878e-3e04-4455-aca4-65c360fa7ed3?source=linked_in_profile" target="_blank" rel="noopener noreferrer">View Certificate</a></p>
+              <h4>React JS</h4>
+              <h5>LinkedIn Learning</h5>
+              <p><a href="https://drive.google.com/file/d/1HkYPbL0mY0gf0Wc3TLhySIzfnk8GzGtd/view?usp=sharing" target="_blank" rel="noopener noreferrer">View Certificate</a></p>
+              <h4>Python for Data Science</h4>
+              <h5>IBM</h5>
+              <p><a href="https://www.youracclaim.com/badges/8ec7759c-a3df-42fe-a17e-670c19a156da?source=linked_in_profile" target="_blank" rel="noopener noreferrer">View Certificate</a></p>
+              </LightSpeed>
             </div>
           </div>
         </Parallax>
