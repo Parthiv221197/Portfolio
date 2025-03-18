@@ -1,7 +1,7 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: Node.js CI
+name: MyWebsite
 
 on:
   push:
@@ -9,23 +9,33 @@ on:
   pull_request:
     branches: [ "master" ]
 
+permissions:  
+  contents: write  # Required to push changes to the repository
+
 jobs:
-  build:
-
+  build-deploy:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: '18'  # Adjust based on your project
         cache: 'npm'
-    - run: npm install gh-pages --save-dev
-    - run: npm run build --if-present
-    - run: npm run deploy
+        
+    - name: Install gh-pages
+      run: npm install gh-pages --save-dev
+
+    - name: Build Project
+      run: npm run build --if-present
+
+    - name: Deploy to GitHub Pages
+      run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          npm run deploy
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
