@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.7c201469.chunk.css",
+    "main.js": "/Portfolio/static/js/main.47e0f918.chunk.js",
+    "main.js.map": "/Portfolio/static/js/main.47e0f918.chunk.js.map",
+    "runtime-main.js": "/Portfolio/static/js/runtime-main.e440ee5a.js",
+    "runtime-main.js.map": "/Portfolio/static/js/runtime-main.e440ee5a.js.map",
+    "static/js/2.14846c3d.chunk.js": "/Portfolio/static/js/2.14846c3d.chunk.js",
+    "static/js/2.14846c3d.chunk.js.map": "/Portfolio/static/js/2.14846c3d.chunk.js.map",
+    "index.html": "/Portfolio/index.html",
+    "precache-manifest.db0ad10dbb50c12d867436e1b97291e3.js": "/Portfolio/precache-manifest.db0ad10dbb50c12d867436e1b97291e3.js",
+    "service-worker.js": "/Portfolio/service-worker.js",
+    "static/css/main.7c201469.chunk.css.map": "/Portfolio/static/css/main.7c201469.chunk.css.map",
+    "static/js/2.14846c3d.chunk.js.LICENSE.txt": "/Portfolio/static/js/2.14846c3d.chunk.js.LICENSE.txt",
+    "static/media/Background.png": "/Portfolio/static/media/Background.9adc5560.png",
+    "static/media/P1.JPG": "/Portfolio/static/media/P1.a6631ec9.JPG",
+    "static/media/P2.JPG": "/Portfolio/static/media/P2.9a29a35a.JPG",
+    "static/media/P3.JPG": "/Portfolio/static/media/P3.54fca400.JPG",
+    "static/media/Profile.jpeg": "/Portfolio/static/media/Profile.c9c4031e.jpeg",
+    "static/media/Resume.jpg": "/Portfolio/static/media/Resume.f86588f5.jpg",
+    "static/media/index.css": "/Portfolio/static/media/Sriracha-Regular.0847227b.ttf",
+    "static/media/connection.png": "/Portfolio/static/media/connection.1ca20b85.png",
+    "static/media/ios.png": "/Portfolio/static/media/ios.ff852574.png",
+    "static/media/java.png": "/Portfolio/static/media/java.e7868999.png",
+    "static/media/javascript.png": "/Portfolio/static/media/javascript.d9de75e5.png",
+    "static/media/logo.png": "/Portfolio/static/media/logo.0918d786.png",
+    "static/media/python.png": "/Portfolio/static/media/python.6dd7bc34.png",
+    "static/media/react.png": "/Portfolio/static/media/react.f297dfcd.png",
+    "static/media/www.png": "/Portfolio/static/media/www.4dd0308a.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e440ee5a.js",
+    "static/js/2.14846c3d.chunk.js",
+    "static/css/main.7c201469.chunk.css",
+    "static/js/main.47e0f918.chunk.js"
+  ]
+}
