@@ -26,16 +26,19 @@ class App extends Component {
         loop={Infinity}
         // wrapper='p'
         steps={[
+          'Cybersecurity Consultant                         ',
           'Software Developer                    ',
           'Web Developer                         ',
-          'Mobile Developer                         ',
+          'Security Engineer                         ',
           'Technical Analyst                         ',
         ]} /></h4>
             <div className="Bio">
-              <p>I'm always eager to learn new stuff and looking forward to opportunities where I can use my skills.
+              <p>I'm always eager to learn new stuff and looking forward to opportunities where I can use my enhance my skills.
                If you have any new ideas or thoughts and if you are willing to share them, connect with me!</p>
-                <p>I am a student at Lassonde School of Engineering, York University.
-                Some of my favorite languages are Java and JavaScript, I love React.js.
+                <p>I am a Cybersecurity Professional working at Canadian Imperial Bank of Commerce(CIBC)
+                I have developed multiple automations helping organisations become faster than ever before. 
+                I have worked on Security tools such as SOAR, SIEM, etc.
+                Some of my favorite languages are Python, Bash, Java and JavaScript, I love React.js.
                 Besides coding, I love music and travelling!</p>
               </div>
         </motion.div>
@@ -55,10 +58,10 @@ class App extends Component {
             <div className="two">
               <LightSpeed right>
               <h3>Experience</h3>
-              <h4>Technical Analyst Co-op</h4>
+              <h4>Consultant - Cybersecurity Application Delivery</h4>
               <h5>CIBC</h5>
-              <p>January 2021 - August 2021</p>
-              <p>Automate Production servers and Work with Ansible and Artifactory.</p>
+              <p>June 2023 - Present</p>
+              <p>Led multiple SOAR integrations, including SOAR-Sentinel (SIEM), SOAR-Palo Alto, and SOAR-Virus Total (Threat Intelligence).</p>
               <h4>Lassonde Academy Coach</h4>
               <h5>York University</h5>
               <p>August 2020 - September 2020</p>
