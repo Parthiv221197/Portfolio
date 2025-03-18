@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Projects from './Projects';
 import SocialProfiles from './SocialProfiles'
-import profile from './assests/NewProfile.jpeg';
+import profile from './assests/Profile.jpeg';
 import { Parallax } from 'react-parallax';
 import CopyrightNotice from 'react-copyright-notice-component';
 import Background from './assests/Background.png'
