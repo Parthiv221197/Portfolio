@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Local server
+.cache/
+
+# All resume variants except the one we ship as the canonical résumé.
+# Keep these out of the repo since they're tailored for individual job apps.
+Parthiv_*_Resume.pdf
+!assets/Parthiv_Patel_Resume.pdf
+
+# Source portrait — we ship the optimized copy in assets/
+/Parthiv.jpeg
+
+# Notes
+TODO.md
+NOTES.md

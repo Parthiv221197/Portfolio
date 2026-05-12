@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Parthiv Patel, Senior Security Automation Engineer in Toronto. Automating identity and vulnerability remediation. Leveraging AI to reason and orchestrate at the speed of detection." />
+  <meta name="author" content="Parthiv Patel" />
+  <meta property="og:title" content="Parthiv Patel · Senior Security Automation Engineer" />
+  <meta property="og:description" content="Building cybersecurity automation that helps teams act faster." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://parthiv221197.github.io/" />
+  <meta property="og:image" content="https://parthiv221197.github.io/assets/parthiv.jpeg" />
+  <meta name="theme-color" content="#faf8f3" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://cdn.simpleicons.org; connect-src 'self' https://api.github.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'" />
+  <title>Parthiv Patel · Senior Security Automation Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a1d23'/%3E%3Ctext x='50%25' y='71%25' text-anchor='middle' font-family='Instrument Serif,serif' font-style='italic' font-size='62' fill='%23faf8f3'%3EP%3C/text%3E%3C/svg%3E" />
+
+  <!-- Theme init: prevents flash of unstyled content -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('pp-theme');
+        var systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var dark = stored ? stored === 'dark' : systemDark;
+        if (dark) document.documentElement.classList.add('dark');
+      } catch (e) { /* localStorage may be blocked */ }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Hidden SVG filter defs for hero photo cycling -->
+  <svg class="svg-defs" aria-hidden="true" focusable="false">
+    <defs>
+      <!-- Sketch: grayscale + edge detection for a pencil-portrait look -->
+      <filter id="fxSketch" x="0%" y="0%" width="100%" height="100%">
+        <feColorMatrix type="matrix" values="
+          0.33 0.33 0.33 0 0
+          0.33 0.33 0.33 0 0
+          0.33 0.33 0.33 0 0
+          0    0    0    1 0"/>
+        <feConvolveMatrix order="3" kernelMatrix="-1 -1 -1 -1 9 -1 -1 -1 -1" preserveAlpha="true"/>
+      </filter>
+
+      <!-- Editorial: high-contrast B&W with subtle warm cast -->
+      <filter id="fxEditorial" x="0%" y="0%" width="100%" height="100%">
+        <feColorMatrix type="matrix" values="
+          0.299 0.587 0.114 0 0
+          0.299 0.587 0.114 0 0
+          0.299 0.587 0.114 0 0
+          0     0     0     1 0"/>
+        <feComponentTransfer>
+          <feFuncR type="linear" slope="1.20" intercept="-0.05"/>
+          <feFuncG type="linear" slope="1.18" intercept="-0.06"/>
+          <feFuncB type="linear" slope="1.10" intercept="-0.08"/>
+        </feComponentTransfer>
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="topnav" id="topnav">
+    <a href="#top" class="topnav__brand" aria-label="Home">
+      <span class="brand__mark">P</span>
+      <span>Parthiv Patel</span>
+    </a>
+    <nav class="topnav__links" aria-label="Primary">
+      <a href="#timeline">Timeline</a>
+      <a href="#projects">Projects</a>
+      <a href="blog/index.html">Writing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+    <a href="mailto:parthiv221197@gmail.com" class="topnav__cta">Say hello →</a>
+    <button class="topnav__menu" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+      <div class="hero__inner">
+
+        <div class="hero__text">
+          <div class="hero__status">
+            <span class="hero__status-live">
+              <span class="hero__status-dot"></span> Always up for a chat
+            </span>
+            <span class="hero__status-sep"></span>
+            <span>Toronto, ON</span>
+          </div>
+
+          <h1 class="hero__title">
+            Building cybersecurity automation that helps teams <em>act faster</em>.
+          </h1>
+
+          <p class="hero__lede">
+            <strong>Senior Security Automation Engineer.</strong>
+            Automating identity and vulnerability remediation. Leveraging AI
+            to reason and orchestrate at the speed of detection.
+            More on <a href="https://www.linkedin.com/in/parthivpatel2/" target="_blank" rel="noopener">LinkedIn</a>.
+          </p>
+
+          <div class="hero__ctas">
+            <a href="#timeline" class="btn btn--primary">See the work <span class="btn__arrow">→</span></a>
+            <a href="assets/Parthiv_Patel_Resume.pdf" class="btn btn--outline" download>
+              Download résumé <span class="btn__arrow btn__arrow--down">↓</span>
+            </a>
+          </div>
+
+          <div class="hero__socials">
+            <a href="https://www.linkedin.com/in/parthivpatel2/" target="_blank" rel="noopener" class="hero__social" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+            <span class="hero__social-sep">/</span>
+            <a href="https://github.com/Parthiv221197" target="_blank" rel="noopener" class="hero__social" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.66-.22.66-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33s1.7.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85V21c0 .27.16.58.67.48A10 10 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>
+              GitHub
+            </a>
+            <span class="hero__social-sep">/</span>
+            <a href="mailto:parthiv221197@gmail.com" class="hero__social" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+              Email
+            </a>
+          </div>
+        </div>
+
+        <figure class="hero__photo">
+          <img src="assets/parthiv.jpeg" alt="Portrait of Parthiv Patel" width="540" height="720" id="heroPhoto" />
+          <figcaption class="hero__photo-caption" id="heroPhotoCaption">Portrait</figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- ===================== TECH MARQUEE ===================== -->
+    <section class="marquee" aria-label="Tools and technologies I work with">
+      <span class="marquee__label">A few tools I work with</span>
+      <div class="marquee__track" id="marqueeTrack" aria-hidden="true">
+        <!-- populated by script.js with brand-correct logos -->
+      </div>
+    </section>
+
+    <!-- ===================== TIMELINE ===================== -->
+    <section class="section" id="timeline">
+      <div class="section__head">
+        <span class="eyebrow">01 · Timeline</span>
+        <h2 class="section__title">A few years of <em class="italic">building things</em>.</h2>
+      </div>
+
+      <div class="timeline" id="timelineEl">
+        <div class="timeline__fill" id="timelineFill" aria-hidden="true"></div>
+
+        <div class="timeline__item" data-tl>
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <div class="timeline__head">
+              <img class="timeline__logo" src="assets/logos/rbc.svg" alt="RBC" loading="lazy" />
+              <span class="timeline__period">Apr 2025 – Present</span>
+              <span class="timeline__badge">Current</span>
+            </div>
+            <h3 class="timeline__role">Senior DevOps Developer</h3>
+            <p class="timeline__company"><strong>RBC</strong> · Toronto, ON</p>
+            <p class="timeline__desc">
+              Designing solutions across <strong>SOAR</strong>, <strong>agentic AI</strong>,
+              <strong>vulnerability graphs</strong>, and security-gated CI/CD.
+              Driving automation and AI initiatives across the cyber org.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline__item" data-tl>
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <div class="timeline__head">
+              <img class="timeline__logo" src="assets/logos/cibc.svg" alt="CIBC" loading="lazy" />
+              <span class="timeline__period">Jun 2023 – Apr 2025</span>
+            </div>
+            <h3 class="timeline__role">Cybersecurity Consultant</h3>
+            <p class="timeline__company"><strong>CIBC</strong> · Toronto, ON</p>
+            <p class="timeline__desc">
+              Led integrations across identity, vulnerability management, threat
+              intelligence, and security operations. Cross-platform migrations
+              and automation across on-prem and cloud.
+            </p>
+            <span class="timeline__stat">5+ major integrations led</span>
+          </div>
+        </div>
+
+        <div class="timeline__item" data-tl>
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <div class="timeline__head">
+              <img class="timeline__logo" src="assets/logos/cibc.svg" alt="CIBC" loading="lazy" />
+              <span class="timeline__period">May 2022 – Jun 2023</span>
+            </div>
+            <h3 class="timeline__role">Senior Technical Analyst</h3>
+            <p class="timeline__company"><strong>CIBC</strong> · Toronto, ON</p>
+            <p class="timeline__desc">
+              Automated code promotion workflows, license renewals, and app
+              onboarding via Ansible and GitHub. Compliance against SC-63, SC-4, INT-10.
+            </p>
+            <span class="timeline__stat">CIBC Annual Achievers Award · 2024</span>
+          </div>
+        </div>
+
+        <div class="timeline__item" data-tl>
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <div class="timeline__head">
+              <img class="timeline__logo" src="assets/logos/cibc.svg" alt="CIBC" loading="lazy" />
+              <span class="timeline__period">Jan 2021 – May 2022</span>
+            </div>
+            <h3 class="timeline__role">Production Application Support Analyst <span style="font-style:italic;color:var(--ink-4);font-size:0.78em">(Co-op)</span></h3>
+            <p class="timeline__company"><strong>CIBC</strong> · Toronto, ON</p>
+            <p class="timeline__desc">
+              Python automation for failed file reprocessing. End-to-end Tripwire
+              VnE upgrade automation. ServiceNow ITSM across incident, change, and service.
+            </p>
+            <span class="timeline__stat">~1 FTE/year saved on Tripwire automation</span>
+          </div>
+        </div>
+
+        <div class="timeline__item" data-tl>
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <div class="timeline__head">
+              <img class="timeline__logo" src="assets/logos/york.svg" alt="York University" loading="lazy" />
+              <span class="timeline__period">Sep 2020 – Apr 2022</span>
+            </div>
+            <h3 class="timeline__role">Teaching Assistant</h3>
+            <p class="timeline__company"><strong>York University</strong> · Lassonde School of Engineering</p>
+            <p class="timeline__desc">
+              Taught and graded for OOP and computer science courses while completing
+              my degree. Mentored juniors learning to code for the first time.
+            </p>
+            <span class="timeline__stat">Outstanding Teaching Assistant Award</span>
+          </div>
+        </div>
+
+        <div class="timeline__item" data-tl>
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <div class="timeline__head">
+              <img class="timeline__logo" src="assets/logos/york.svg" alt="York University" loading="lazy" />
+              <span class="timeline__period">Jan 2019 – Apr 2022</span>
+            </div>
+            <h3 class="timeline__role">B.Sc. Computer Science</h3>
+            <p class="timeline__company"><strong>York University</strong> · Toronto, ON</p>
+            <p class="timeline__desc">
+              Lassonde School of Engineering. Strong fundamentals in OOP, algorithms,
+              networks, and systems. CIBC Student Spotlight Award · 2021.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS (live from GitHub) ===================== -->
+    <section class="section" id="projects">
+      <div class="section__head">
+        <span class="eyebrow">02 · Projects</span>
+        <h2 class="section__title">A few things <em class="italic">on GitHub</em>.</h2>
+        <p class="section__sub">Pulled live from my GitHub. Updates whenever I push something new.</p>
+      </div>
+
+      <div class="projects__grid" id="projectsGrid" aria-live="polite">
+        <div class="projects__loading">Loading projects from GitHub…</div>
+      </div>
+
+      <p class="projects__more">
+        <a href="https://github.com/Parthiv221197" target="_blank" rel="noopener">View all on GitHub →</a>
+      </p>
+    </section>
+
+    <!-- ===================== WRITING ===================== -->
+    <section class="section" id="writing">
+      <div class="section__head">
+        <span class="eyebrow">03 · Writing</span>
+        <h2 class="section__title">Notes from <em class="italic">the inside</em>.</h2>
+      </div>
+
+      <a href="blog/the-agentic-soc-trap.html" class="post-feature">
+        <div class="post-feature__meta">
+          <span>May 2026</span>
+          <span class="post-feature__dot">·</span>
+          <span>4 min read</span>
+          <span class="post-feature__dot">·</span>
+          <span class="post-feature__tag">Security · AI</span>
+        </div>
+        <h3 class="post-feature__title">
+          What's missing from agentic SOC: <em>internal context</em>.
+        </h3>
+        <p class="post-feature__excerpt">
+          Every other organization is sprinting toward an agentic SOC. The capability is real
+          and the security products are doing good work. As an industry though, we still have
+          something important to figure out before we hand defense to autonomous agents.
+        </p>
+        <span class="post-feature__cta">Read the piece <span class="arrow">→</span></span>
+      </a>
+
+      <p class="writing__more">
+        <a href="blog/">See all writing →</a>
+      </p>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section contact" id="contact">
+      <div class="contact__inner">
+        <span class="eyebrow">04 · Contact</span>
+        <h2 class="contact__title">
+          Building something <em>that has to stay up</em>?
+        </h2>
+        <p class="contact__sub">
+          Drop a line if you're working on cybersecurity automation, DevSecOps,
+          or applied AI in security. Always interested in good conversations.
+        </p>
+        <div class="contact__list">
+          <a href="mailto:parthiv221197@gmail.com" class="contact__row">
+            <span class="contact__k">Email</span>
+            <span class="contact__v">parthiv221197@gmail.com</span>
+            <span class="contact__arrow">→</span>
+          </a>
+          <a href="https://www.linkedin.com/in/parthivpatel2/" target="_blank" rel="noopener" class="contact__row">
+            <span class="contact__k">LinkedIn</span>
+            <span class="contact__v">/in/parthivpatel2</span>
+            <span class="contact__arrow">↗</span>
+          </a>
+          <a href="https://github.com/Parthiv221197" target="_blank" rel="noopener" class="contact__row">
+            <span class="contact__k">GitHub</span>
+            <span class="contact__v">@Parthiv221197</span>
+            <span class="contact__arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span class="footer__name">Parthiv Patel</span>
+      <span class="footer__meta">© <span id="year"></span> · Toronto, ON · Built with HTML, CSS &amp; JS</span>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

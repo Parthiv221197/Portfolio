@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The capability of agentic SOC is real and the security products are doing good work. As an industry, though, we still have something important to figure out before we hand defense to autonomous agents: internal context and data accuracy." />
+  <meta name="author" content="Parthiv Patel" />
+  <meta property="og:title" content="What's Missing From Agentic SOC: Internal Context · Parthiv Patel" />
+  <meta property="og:description" content="The agents we have today are smart at finding things. They are not yet smart at knowing your environment." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://parthiv221197.github.io/blog/the-agentic-soc-trap.html" />
+  <meta name="theme-color" content="#faf8f3" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://cdn.simpleicons.org; connect-src 'self' https://api.github.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'" />
+  <title>What's Missing From Agentic SOC: Internal Context · Parthiv Patel</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a1d23'/%3E%3Ctext x='50%25' y='71%25' text-anchor='middle' font-family='Instrument Serif,serif' font-style='italic' font-size='62' fill='%23faf8f3'%3EP%3C/text%3E%3C/svg%3E" />
+
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('pp-theme');
+        var systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var dark = stored ? stored === 'dark' : systemDark;
+        if (dark) document.documentElement.classList.add('dark');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="topnav is-scrolled" id="topnav">
+    <a href="../index.html" class="topnav__brand" aria-label="Home">
+      <span class="brand__mark">P</span>
+      <span>Parthiv Patel</span>
+    </a>
+    <nav class="topnav__links" aria-label="Primary">
+      <a href="../index.html#timeline">Timeline</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="index.html">Writing</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+    <a href="mailto:parthiv221197@gmail.com" class="topnav__cta">Say hello →</a>
+  </header>
+
+  <article class="article">
+    <a href="../index.html#writing" class="article__back">← Back to writing</a>
+
+    <header class="article__header">
+      <div class="article__meta">
+        <span>May 2026</span>
+        <span>·</span>
+        <span>4 min read</span>
+        <span>·</span>
+        <span class="article__tag">Security · AI</span>
+      </div>
+      <h1 class="article__title">
+        What's missing from agentic SOC: <em>internal context</em>.
+      </h1>
+      <p class="article__lede">
+        The capability is real and the security products are doing good work. As an
+        industry though, we still have something important to figure out before we
+        hand defense to autonomous agents.
+      </p>
+    </header>
+
+    <figure class="article__hero">
+      <img src="../assets/agentic-soc-illustration.svg" alt="An AI agent at the center of a network with bright connections to a few known systems and many dim nodes representing the internal context the agent does not yet have." />
+      <figcaption>An agent connected to a few known systems, surrounded by everything it doesn't know.</figcaption>
+    </figure>
+
+    <div class="prose">
+
+      <p>
+        I believe every other organization right now is running behind agentic SOC and
+        agentic SOAR. The pitch is good. The capability is genuinely exciting. And on
+        most days, I'm one of the people building toward this future.
+      </p>
+
+      <p>
+        The volumes alone justify the rush. The average SOC sees around 4,500 alerts
+        a day, and a large share of them go uninvestigated. No amount of headcount
+        fixes that. Automation does. Which is why <strong>Gartner expects 70% of large
+        SOCs to pilot AI SOC agents by 2028, but only 15% to actually succeed</strong>.
+        That gap is what this post is about.
+      </p>
+
+      <h2>The question I keep coming back to</h2>
+
+      <p>
+        Is your agent trained on your internal context? Does it know how your
+        applications behave on a normal Tuesday at 2am during batch processing? Does
+        it know which authentication patterns are your Toronto team finishing
+        timesheets versus a credential stuffing attempt?
+      </p>
+
+      <p>
+        A human analyst with six months of context picks this up. They learn your
+        environment, your topology, the services that get touchy at end of quarter.
+        An agent trained on generic security knowledge does not know any of that.
+        It's making decisions on a map that isn't yours.
+      </p>
+
+      <h2>The priority problem</h2>
+
+      <p>
+        The failure mode I worry about isn't the dramatic one. The agent isn't going
+        to take a catastrophically wrong remediation action. The risk is much quieter.
+      </p>
+
+      <p>
+        Take Mythos and the other newer "smarter" AI models. They're getting really
+        good at finding things. A dependency audit might surface a package from 2007
+        with a known CVE that's been sitting in your stack for years. The model finds
+        it. It flags it. And then it classifies it as low priority.
+      </p>
+
+      <p>
+        Why low? Because the CVE is old, public exploit kits don't widely use it, and
+        the CVSS base score is moderate. In most environments the blast radius is
+        limited.
+      </p>
+
+      <p>
+        But your environment isn't most environments. Maybe that package sits on a
+        service that touches your most sensitive data store. Maybe a motivated attacker
+        who has done their homework on you already knows this. The agent doesn't,
+        because it doesn't have your graph. That's how a real risk gets quietly
+        classified as low, sits in a queue, and waits for someone to get unlucky.
+      </p>
+
+      <h2>Why defense is different</h2>
+
+      <p>
+        Attackers only need to have one lucky day. Defenders need to have all the
+        luck, every single day. An agentic system that consistently underweights a
+        class of risk gives attackers a reliable angle into your environment. And
+        because the agent is acting autonomously, the blind spot is invisible. With
+        a human analyst you'd at least see the misclassification in a queue. With
+        an agent it may never surface, until it's too late.
+      </p>
+
+      <h2>What we actually need to build</h2>
+
+      <p>
+        None of this is a complaint about specific security products. The products
+        are doing good work and they will get there. The point is that as an
+        industry we have to do the unglamorous second half of the work. Roughly:
+      </p>
+
+      <ul>
+        <li>Asset inventories that are actually accurate and continuously updated.</li>
+        <li>Application behavior baselines that reflect real usage, not assumed behavior.</li>
+        <li>Data hygiene that catches stale labels, retired identities, and ownership drift before the agent acts on them.</li>
+        <li>Internal risk weights specific to your topology and data sensitivity.</li>
+        <li>A graph that connects services, data, identities, and findings so blast radius is computable per finding.</li>
+        <li>Feedback loops so when the agent is wrong, you find out within days, not after the post-incident review.</li>
+      </ul>
+
+      <p>
+        None of that ships in a demo. All of it is what turns a generally smart agent
+        into one that's trustworthy in your environment.
+      </p>
+
+      <h2>The work ahead</h2>
+
+      <p>
+        Right now, agentic AI adoption is reportedly outpacing governance by roughly
+        eight to one. That's the gap I worry about most.
+      </p>
+
+      <p>
+        I think the security products will get there. I think we will get there as
+        an industry. The capability curve is steep and the people working on this
+        are sharp. But "we'll get there" and "let's deploy this autonomously today"
+        are two very different statements, and conflating them is the actual risk.
+      </p>
+
+      <p>
+        We have a long way to run. And in defense, where attackers only need one
+        lucky day, that distance matters.
+      </p>
+
+    </div>
+
+    <div class="article__sig">
+      <img src="../assets/parthiv.jpeg" alt="Parthiv Patel" />
+      <div class="article__sig-text">
+        <strong>I'm Parthiv Patel</strong>, a Senior Security Automation Engineer in Toronto,
+        currently at RBC.<br />
+        Find me on
+        <a href="https://www.linkedin.com/in/parthivpatel2/">LinkedIn</a>
+        or
+        <a href="https://github.com/Parthiv221197">GitHub</a>.
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span class="footer__name">Parthiv Patel</span>
+      <span class="footer__meta">© <span id="year"></span> · Toronto, ON</span>
+    </div>
+  </footer>
+
+  <script src="../script.js" defer></script>
+</body>
+</html>

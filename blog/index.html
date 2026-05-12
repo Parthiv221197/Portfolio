@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Writing by Parthiv Patel on cybersecurity automation, AI in security operations, identity, and the things that don't show up in a demo." />
+  <meta name="author" content="Parthiv Patel" />
+  <meta property="og:title" content="Writing · Parthiv Patel" />
+  <meta property="og:description" content="Notes on cybersecurity automation, AI in security operations, and the things that don't show up in a demo." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://parthiv221197.github.io/blog/" />
+  <meta name="theme-color" content="#faf8f3" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://cdn.simpleicons.org; connect-src 'self' https://api.github.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'" />
+  <title>Writing · Parthiv Patel</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a1d23'/%3E%3Ctext x='50%25' y='71%25' text-anchor='middle' font-family='Instrument Serif,serif' font-style='italic' font-size='62' fill='%23faf8f3'%3EP%3C/text%3E%3C/svg%3E" />
+
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('pp-theme');
+        var systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var dark = stored ? stored === 'dark' : systemDark;
+        if (dark) document.documentElement.classList.add('dark');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="topnav is-scrolled" id="topnav">
+    <a href="../index.html" class="topnav__brand" aria-label="Home">
+      <span class="brand__mark">P</span>
+      <span>Parthiv Patel</span>
+    </a>
+    <nav class="topnav__links" aria-label="Primary">
+      <a href="../index.html#timeline">Timeline</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="index.html">Writing</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+    <a href="mailto:parthiv221197@gmail.com" class="topnav__cta">Say hello →</a>
+  </header>
+
+  <main class="blog-index">
+    <a href="../index.html" class="blog-index__back">← Back to portfolio</a>
+
+    <header class="blog-index__head">
+      <h1 class="blog-index__title">Writing.</h1>
+      <p class="blog-index__sub">
+        A few things I've been thinking about. Mostly cybersecurity automation, AI in
+        security operations, and the parts of the work that don't show up in a demo.
+      </p>
+    </header>
+
+    <ol class="post-list">
+
+      <li>
+        <a href="the-agentic-soc-trap.html" class="post-list__item">
+          <div class="post-list__meta">
+            <span>May 2026</span>
+            <span class="post-list__dot">·</span>
+            <span>4 min read</span>
+            <span class="post-list__dot">·</span>
+            <span class="post-list__tag">Security · AI</span>
+          </div>
+          <h2 class="post-list__title">
+            What's missing from agentic SOC: <em>internal context</em>.
+          </h2>
+          <p class="post-list__excerpt">
+            Every other organization is sprinting toward an agentic SOC. The capability
+            is real and the security products are doing good work. As an industry though,
+            we still have something important to figure out before we hand defense to
+            autonomous agents.
+          </p>
+          <span class="post-list__cta">Read <span class="arrow">→</span></span>
+        </a>
+      </li>
+
+      <!--
+        New posts: copy a <li> block above and update meta, title, excerpt, link.
+        Each post lives at /blog/<slug>.html using the article template
+        (see the-agentic-soc-trap.html as the working example).
+      -->
+
+    </ol>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span class="footer__name">Parthiv Patel</span>
+      <span class="footer__meta">© <span id="year"></span> · Toronto, ON</span>
+    </div>
+  </footer>
+
+  <script src="../script.js" defer></script>
+</body>
+</html>
