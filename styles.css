@@ -37,8 +37,8 @@
   --nav-bg-menu:     rgba(250,248,243,0.98);
 
   /* Typography */
-  --sans:  "Instrument Sans", "Inter", system-ui, -apple-system, sans-serif;
-  --serif: "Instrument Serif", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --sans:  "Manrope", "Inter", system-ui, -apple-system, sans-serif;
+  --serif: "Lora", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
   --mono:  "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   /* Layout */
@@ -622,9 +622,21 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   width: 28px; height: 28px;
   border-radius: 6px;
   flex-shrink: 0;
+  background: transparent;
+  padding: 0;
+  border: 0;
+  /* Removes the favicon's white background by multiplying it into the
+     cream page, so logos sit naturally on the page in light mode */
+  mix-blend-mode: multiply;
+  transition: background .2s, padding .2s, border .2s, mix-blend-mode .2s;
+}
+/* In dark mode, keep a small white tile container so colored marks
+   stay legible against the dark page */
+:root.dark .timeline__logo {
   background: #fff;
   padding: 3px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255,255,255,0.08);
+  mix-blend-mode: normal;
 }
 .timeline__period {
   font-family: var(--mono);
@@ -726,12 +738,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   margin-bottom: 10px;
 }
 .project-card__icon {
-  width: 30px; height: 30px;
+  width: 32px; height: 32px;
   display: grid; place-items: center;
-  background: var(--ink); color: var(--bg);
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--border);
   border-radius: 7px;
   font-family: var(--mono); font-weight: 500;
-  font-size: 13px;
+  font-size: 16px;
+  line-height: 1;
   flex-shrink: 0;
 }
 .project-card__name {

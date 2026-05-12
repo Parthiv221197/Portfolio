@@ -42,13 +42,15 @@
       });
     }
 
-    // Track system preference changes for users who haven't manually toggled
+    // Track system preference changes for users who haven't manually toggled.
+    // Inherit "light" only if the user has explicitly set light at the OS
+    // level; otherwise default to dark.
     if (window.matchMedia) {
-      var mql = window.matchMedia("(prefers-color-scheme: dark)");
+      var mql = window.matchMedia("(prefers-color-scheme: light)");
       var onSysChange = function (e) {
         var stored;
         try { stored = localStorage.getItem("pp-theme"); } catch (er) {}
-        if (!stored) setTheme(e.matches ? "dark" : "light", false);
+        if (!stored) setTheme(e.matches ? "light" : "dark", false);
       };
       if (mql.addEventListener) mql.addEventListener("change", onSysChange);
       else if (mql.addListener) mql.addListener(onSysChange);
@@ -193,7 +195,7 @@
       { name: "Ansible",         src: si("ansible", "EE0000"),         kind: "si" },
       { name: "Cortex XSOAR",    src: "assets/xsoar.svg",              kind: "local" },
       { name: "Wiz",             src: "assets/logos/wiz-square.jpg",   kind: "local" },
-      { name: "Aqua Security",   src: "assets/logos/aqua.jpg",         kind: "local" }
+      { name: "Devo",            src: "assets/logos/devo.png",         kind: "local" }
     ];
 
     var buildItem = function (t) {
@@ -318,6 +320,17 @@
     // Repos to hide from the grid (old/profile/duplicates)
     var hidden = { "Parthiv221197": 1, "Portfolio": 1, "React-webpage": 1, "WisdomPets": 1, "Meeting": 1 };
 
+    // Per-project glyph that hints at what the repo is about. Falls back to
+    // the first letter of the repo name if no mapping exists.
+    var projectIcon = {
+      "llm-sneak":          "🥷",
+      "Scapy_Recon_Master": "🛰️",
+      "Queue_Simulator":    "⏳",
+      "Java_REST_Project":  "☕",
+      "Java_Database":      "🗄️",
+      "Android-Projects":   "🤖"
+    };
+
     // Friendly names for repos with no description
     var fallbackDesc = {
       "llm-sneak":         "Security scanner for large language models.",
@@ -369,7 +382,7 @@
         head.className = "project-card__head";
         var icon = document.createElement("span");
         icon.className = "project-card__icon";
-        icon.textContent = (r.name[0] || "?").toUpperCase();
+        icon.textContent = projectIcon[r.name] || (r.name[0] || "?").toUpperCase();
         var name = document.createElement("h3");
         name.className = "project-card__name";
         name.textContent = r.name;

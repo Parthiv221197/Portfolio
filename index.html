@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Parthiv Patel, Senior Security Automation Engineer in Toronto. Automating identity and vulnerability remediation. Leveraging AI to reason and orchestrate at the speed of detection." />
+  <meta name="description" content="Parthiv Patel, Senior Security Automation Engineer in Toronto. Building automation across identity, vulnerability, SIEM, and SOAR. Leveraging AI to reason and orchestrate at the speed of detection." />
   <meta name="author" content="Parthiv Patel" />
   <meta property="og:title" content="Parthiv Patel · Senior Security Automation Engineer" />
   <meta property="og:description" content="Building cybersecurity automation that helps teams act faster." />
@@ -18,7 +18,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a1d23'/%3E%3Ctext x='50%25' y='71%25' text-anchor='middle' font-family='Instrument Serif,serif' font-style='italic' font-size='62' fill='%23faf8f3'%3EP%3C/text%3E%3C/svg%3E" />
@@ -28,8 +28,8 @@
     (function () {
       try {
         var stored = localStorage.getItem('pp-theme');
-        var systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var dark = stored ? stored === 'dark' : systemDark;
+        var systemLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+        var dark = stored ? stored === 'dark' : !systemLight;
         if (dark) document.documentElement.classList.add('dark');
       } catch (e) { /* localStorage may be blocked */ }
     })();
@@ -117,8 +117,8 @@
 
           <p class="hero__lede">
             <strong>Senior Security Automation Engineer.</strong>
-            Automating identity and vulnerability remediation. Leveraging AI
-            to reason and orchestrate at the speed of detection.
+            Building automation across identity, vulnerability, SIEM, and SOAR.
+            Leveraging AI to reason and orchestrate at the speed of detection.
             More on <a href="https://www.linkedin.com/in/parthivpatel2/" target="_blank" rel="noopener">LinkedIn</a>.
           </p>
 
@@ -188,6 +188,7 @@
               <strong>vulnerability graphs</strong>, and security-gated CI/CD.
               Driving automation and AI initiatives across the cyber org.
             </p>
+            <span class="timeline__stat">5+ major integrations led</span>
           </div>
         </div>
 
@@ -205,23 +206,6 @@
               intelligence, and security operations. Cross-platform migrations
               and automation across on-prem and cloud.
             </p>
-            <span class="timeline__stat">5+ major integrations led</span>
-          </div>
-        </div>
-
-        <div class="timeline__item" data-tl>
-          <div class="timeline__dot"></div>
-          <div class="timeline__card">
-            <div class="timeline__head">
-              <img class="timeline__logo" src="assets/logos/cibc.png" alt="CIBC" loading="lazy" />
-              <span class="timeline__period">May 2022 – Jun 2023</span>
-            </div>
-            <h3 class="timeline__role">Senior Technical Analyst</h3>
-            <p class="timeline__company"><strong>CIBC</strong> · Toronto, ON</p>
-            <p class="timeline__desc">
-              Automated code promotion workflows, license renewals, and app
-              onboarding via Ansible and GitHub. Compliance against SC-63, SC-4, INT-10.
-            </p>
             <span class="timeline__stat">CIBC Annual Achievers Award · 2024</span>
           </div>
         </div>
@@ -231,15 +215,34 @@
           <div class="timeline__card">
             <div class="timeline__head">
               <img class="timeline__logo" src="assets/logos/cibc.png" alt="CIBC" loading="lazy" />
-              <span class="timeline__period">Jan 2021 – May 2022</span>
+              <span class="timeline__period">Aug 2021 – Jun 2023</span>
+            </div>
+            <h3 class="timeline__role">Senior Technical Analyst</h3>
+            <p class="timeline__company"><strong>CIBC</strong> · Toronto, ON</p>
+            <p class="timeline__desc">
+              Built end-to-end automation for Tripwire VnE upgrade deployments
+              and other critical applications. Automated code promotion workflows,
+              license renewals, and app onboarding via Ansible and GitHub.
+              Compliance against SC-63, SC-4, INT-10.
+            </p>
+            <span class="timeline__stat">Developed my first end-to-end automation pipeline for auto-patching</span>
+          </div>
+        </div>
+
+        <div class="timeline__item" data-tl>
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <div class="timeline__head">
+              <img class="timeline__logo" src="assets/logos/cibc.png" alt="CIBC" loading="lazy" />
+              <span class="timeline__period">Jan 2021 – Aug 2021</span>
             </div>
             <h3 class="timeline__role">Production Application Support Analyst <span style="font-style:italic;color:var(--ink-4);font-size:0.78em">(Co-op)</span></h3>
             <p class="timeline__company"><strong>CIBC</strong> · Toronto, ON</p>
             <p class="timeline__desc">
-              Python automation for failed file reprocessing. End-to-end Tripwire
-              VnE upgrade automation. ServiceNow ITSM across incident, change, and service.
+              Python automation for failed file reprocessing on the CLM DEVO platform.
+              ServiceNow ITSM across incident, change, and service management.
             </p>
-            <span class="timeline__stat">~1 FTE/year saved on Tripwire automation</span>
+            <span class="timeline__stat">CIBC Student Spotlight Award · 2021</span>
           </div>
         </div>
 
@@ -271,8 +274,9 @@
             <p class="timeline__company"><strong>York University</strong> · Toronto, ON</p>
             <p class="timeline__desc">
               Lassonde School of Engineering. Strong fundamentals in OOP, algorithms,
-              networks, and systems. CIBC Student Spotlight Award · 2021.
+              networks, and systems.
             </p>
+            <span class="timeline__stat">Graduated with First Class</span>
           </div>
         </div>
 
