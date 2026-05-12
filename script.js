@@ -20,37 +20,27 @@
   var yr = document.getElementById("year");
   if (yr) yr.textContent = new Date().getFullYear();
 
-  // ---- Theme toggle (light / dark) --------------------------
-  // The initial theme is applied by an inline script in <head> to avoid
-  // flash of unstyled content. This binding handles user-driven toggling
-  // and keeps the system-preference listener live.
+  // ---- Theme (system-driven, with session toggle) -----------
+  // The page always follows the OS-level prefers-color-scheme. The toggle
+  // button flips the theme for the current session only — no persistence.
+  // Changing your OS appearance setting always wins immediately.
+  // Clear any legacy stored value so old visitors get the new behavior.
   (function () {
-    var themeBtn = document.getElementById("themeToggle");
-    var root = document.documentElement;
+    try { localStorage.removeItem("pp-theme"); } catch (e) {}
 
-    function setTheme(mode, persist) {
-      root.classList.toggle("dark", mode === "dark");
-      if (persist) {
-        try { localStorage.setItem("pp-theme", mode); } catch (e) {}
-      }
-    }
+    var root = document.documentElement;
+    var themeBtn = document.getElementById("themeToggle");
 
     if (themeBtn) {
       themeBtn.addEventListener("click", function () {
-        var nextDark = !root.classList.contains("dark");
-        setTheme(nextDark ? "dark" : "light", true);
+        root.classList.toggle("dark");
       });
     }
 
-    // Track system preference changes for users who haven't manually toggled.
-    // Inherit "light" only if the user has explicitly set light at the OS
-    // level; otherwise default to dark.
     if (window.matchMedia) {
       var mql = window.matchMedia("(prefers-color-scheme: light)");
       var onSysChange = function (e) {
-        var stored;
-        try { stored = localStorage.getItem("pp-theme"); } catch (er) {}
-        if (!stored) setTheme(e.matches ? "light" : "dark", false);
+        root.classList.toggle("dark", !e.matches);
       };
       if (mql.addEventListener) mql.addEventListener("change", onSysChange);
       else if (mql.addListener) mql.addListener(onSysChange);

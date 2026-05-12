@@ -27,11 +27,9 @@
   <script>
     (function () {
       try {
-        var stored = localStorage.getItem('pp-theme');
         var systemLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-        var dark = stored ? stored === 'dark' : !systemLight;
-        if (dark) document.documentElement.classList.add('dark');
-      } catch (e) { /* localStorage may be blocked */ }
+        if (!systemLight) document.documentElement.classList.add('dark');
+      } catch (e) {}
     })();
   </script>
 </head>
